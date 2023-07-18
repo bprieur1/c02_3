@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bprieur <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 14:39:56 by bprieur           #+#    #+#             */
-/*   Updated: 2023/07/13 14:41:32 by bprieur          ###   ########.fr       */
+/*   Created: 2023/07/13 12:10:39 by bprieur           #+#    #+#             */
+/*   Updated: 2023/07/18 11:12:09 by bprieur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_str_is_printable(char *str)
+char	*ft_strcpy(char *dest, char *src)
 {
-    if (!str)
-        return (1);
+	char	*ptrd;
 
-    while (*str) 
-    {
-        if (*str < 32 || *str > 126)
-            return (0);
-        str++;
-    }
-
-    return (1);
+	ptrd = dest;
+	while (*src != '\0')
+	{
+		*dest = *src;
+		src++;
+		dest++;
+	}
+	*dest = '\0';
+	return (ptrd);
 }

@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bprieur <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 12:10:39 by bprieur           #+#    #+#             */
-/*   Updated: 2023/07/13 14:28:20 by bprieur          ###   ########.fr       */
+/*   Created: 2023/07/18 11:24:32 by bprieur           #+#    #+#             */
+/*   Updated: 2023/07/18 11:24:35 by bprieur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_str_is_numeric(char *str)
 {
-	char	*ptrd;
-
-	ptrd = dest;
-	while (*src != '\0')
+	while (*str)
 	{
-		*dest = *src;
-		src++;
-		dest++;
+		if (*str < '0' || '9' < *str)
+			return (0);
+		str++;
 	}
-	*dest = '\0';
-	return (ptrd);
+	return (1);
 }
